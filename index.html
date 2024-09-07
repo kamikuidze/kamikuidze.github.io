@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="main-page">
+        <div class="stats">
+            <div class="stat">
+                <p>Coins per tap:</p>
+                <span id="coins-per-tap">+1</span>
+            </div>
+            <div class="stat">
+                <p>Coins per sec:</p>
+                <span id="coins-per-sec">+0</span>
+            </div>
+        </div>
+
+        <div id="coins-display" class="coins-display">1000000</div>
+
+        <div class="cat-image-container">
+            <img src="cat.png" alt="Cat" class="cat-image" id="cat-button">
+        </div>
+
+        <div class="menu">
+            <button class="menu-btn" onclick="showHelp()">Help</button>
+            <button class="menu-btn" onclick="showMain()">Main</button>
+            <button class="menu-btn" onclick="showShop()">Shop</button>
+        </div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="container hidden" id="help-page">
+        <h2>Help & Info</h2>
+        <p>Follow me on:</p>
+        <ul>
+            <li><a href="https://t.me/NesquikWithBeerHelp" target="_blank">Telegram Chanel</a></li>
+            <li><a href="mailto:traktorkamaanton@gmail.com">Email Me</a></li>
+        </ul>
+        <button class="menu-btn" onclick="showMain()">Back</button>
+    </div>
+
+    <!-- Shop Section -->
+    <div class="container hidden" id="shop-page">
+        <h2>Shop</h2>
+        <div class="shop-item">
+            <p>Nesquik (Increases tap power)</p>
+            <img src="nesquik.png" alt="Nesquik" class="shop-image">
+            <button class="menu-btn" id="buy-nesquik" onclick="buyNesquik()">Buy for <span id="nesquik-price">150</span> coins</button>
+        </div>
+        <div class="shop-item">
+            <p>Beer (Increases auto taps)</p>
+            <img src="beer.png" alt="Beer" class="shop-image">
+            <button class="menu-btn" id="buy-beer" onclick="buyBeer()">Buy for <span id="beer-price">150</span> coins</button>
+        </div>
+        <button class="menu-btn" onclick="showMain()">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
