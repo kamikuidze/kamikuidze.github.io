@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="main-page">
+        <div class="stats">
+            <div class="stat">
+                <p>Coins per tap:</p>
+                <span id="coins-per-tap">+1</span>
+            </div>
+            <div class="stat">
+                <p>Coins per sec:</p>
+                <span id="coins-per-sec">+0</span>
+            </div>
+        </div>
+
+        <div id="coins-display" class="coins-display">1000000</div>
+
+        <div class="cat-image-container">
+            <img src="images/cat.png" alt="Cat" class="cat-image" id="cat-button">
+        </div>
+
+        <div class="menu">
+            <button class="menu-btn" onclick="showHelp()">Help</button>
+            <button class="menu-btn" onclick="showShop()">Shop</button>
+            <button class="menu-btn" onclick="showGames()">Game</button> <!-- Новая кнопка Games -->
+        </div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="container hidden" id="help-page">
+        <h2>Help & Info</h2>
+        <p class="follow-text">Follow me on:</p>
+        <ul class="social-links">
+            <li><a href="https://t.me/NesquikWithBeerHelp" target="_blank" class="social-icon">
+                <img src="images/telegram-icon.png" alt="Telegram" class="icon"> Telegram
+            </a></li>
+            <li><a href="mailto:traktorkamaanton@gmail.com" class="social-icon">
+                <img src="images/email-icon.png" alt="Email" class="icon"> Email
+            </a></li>
+        </ul>
+        <button class="menu-btn" onclick="showMain()">Back</button>
+    </div>
+
+    <!-- Shop Section -->
+    <div class="container hidden" id="shop-page">
+        <h2>Shop</h2>
+        <div class="shop-item">
+            <p>Nesquik (Increases tap power)</p>
+            <img src="images/nesquik.png" alt="Nesquik" class="shop-image">
+            <button class="menu-btn" id="buy-nesquik" onclick="buyNesquik()">Buy for <span id="nesquik-price">150</span> coins</button>
+        </div>
+        <div class="shop-item">
+            <p>Beer (Increases auto taps)</p>
+            <img src="images/beer.png" alt="Beer" class="shop-image">
+            <button class="menu-btn" id="buy-beer" onclick="buyBeer()">Buy for <span id="beer-price">150</span> coins</button>
+        </div>
+        <button class="menu-btn" onclick="showMain()">Back</button>
+    </div>
+
+    <!-- Games Section -->
+    <div class="container hidden" id="games-page">
+        <h2>Select a Game</h2>
+        <div class="game-item">
+            <button class="menu-btn" onclick="start2048()">Play 2048</button>
+        </div>
+        <div class="game-item">
+            <button class="menu-btn" onclick="startTicTacToe()">Play Tic Tac Toe</button>
+        </div>
+        <div class="game-item">
+            <button class="menu-btn" onclick="startSnake()">Play Snake</button>
+        </div>
+        <button class="menu-btn" onclick="showMain()">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
